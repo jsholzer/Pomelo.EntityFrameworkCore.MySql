@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using Pomelo.EntityFrameworkCore.MySql.Internal;
 
 namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
@@ -330,10 +330,10 @@ WHERE table_type = 'BASE TABLE' AND table_schema = '" + _relationalConnection.Db
         }
 
         // Clear connection pools in case there are active connections that are pooled
-        private static void ClearAllPools() => global::MySql.Data.MySqlClient.MySqlConnection.ClearAllPools();
+        private static void ClearAllPools() => global::MySqlConnector.MySqlConnection.ClearAllPools();
 
         // Clear connection pool for the database connection since after the 'create database' call, a previously
         // invalid connection may now be valid.
-        private void ClearPool() => global::MySql.Data.MySqlClient.MySqlConnection.ClearPool((global::MySql.Data.MySqlClient.MySqlConnection)_relationalConnection.DbConnection);
+        private void ClearPool() => global::MySqlConnector.MySqlConnection.ClearPool((global::MySqlConnector.MySqlConnection)_relationalConnection.DbConnection);
     }
 }

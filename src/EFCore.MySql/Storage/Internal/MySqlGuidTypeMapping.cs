@@ -1,6 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore.Storage;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using Pomelo.EntityFrameworkCore.MySql.Utilities;
 
 namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
@@ -52,7 +52,7 @@ namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
                     throw new ArgumentOutOfRangeException();
             }
         }
-        
+
         private static string GetStoreType(MySqlGuidFormat guidFormat)
         {
             switch (guidFormat)

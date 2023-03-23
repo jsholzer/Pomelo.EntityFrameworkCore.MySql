@@ -4,7 +4,7 @@
 using System;
 using System.Data;
 using System.Text.RegularExpressions;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace Pomelo.EntityFrameworkCore.MySql.Storage

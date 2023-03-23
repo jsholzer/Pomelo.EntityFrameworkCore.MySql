@@ -4,12 +4,10 @@
 using System;
 using System.Data.Common;
 using System.Reflection;
-using System.Text;
 using JetBrains.Annotations;
-using MySql.Data.MySqlClient; // Note: Hard reference to MySqlClient here.
+using MySqlConnector; // Note: Hard reference to MySqlClient here.
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MySql.Data.Types;
 using NetTopologySuite;
 using NetTopologySuite.Geometries;
 using NetTopologySuite.IO;
